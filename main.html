@@ -7,17 +7,32 @@
   <style  >
 
 /*core of page*/
+
+*{
+
+    list-style: none;
+    margin: 0px;
+    max-width: 100%;
+    padding: var(--rel-padding);
+}
 html{
-  font-size: var(--scale);
+  font-size: var(--rel-scale);
   line-height: 1;
-  color: var(--color);
-  background:  var(--bg);
+  color: var(--color-default);
+  background:  var(--background-default);
   width: auto ;
   max-width: 100vw;
 }
-html,body, header, main, footer,a, section,div,nav{
+progress{
+  padding: var(--rel-padding);
+}
+html,body, header, main, footer,div,nav,hr,img,span,section,ul, dl, ol{
   display: block;
   padding: 0px;
+}
+section{
+  display: flex;
+  flex-direction: column;
 }
 pre {
   overflow-x: scroll;
@@ -34,36 +49,115 @@ td{
  white-space: nowrap;
 
 }
-ol *,ul  *,dl *{ 
-  padding-top: calc(var(--padding) / 2);
-  padding-bottom: calc(var(--padding) / 2);
- }
+nav{
+
+  background: var(--background-nav);
+}
+nav a{
+  color: var(--color-navigation);
+}
+nav a, nav li{
+  display: block;
+  padding: 0;
+  text-decoration: none;
+}
+nav li > a{
+  padding: calc(var(--rel-padding));
+  padding-left: calc(var(--rel-padding)* 3);
+
+}
+
+ol *,ul > *,dl *{ 
+  padding-top: calc(var(--rel-padding) / 2);
+  padding-bottom: calc(var(--rel-padding) / 2);
+  padding-left: calc(var(--rel-padding) * 3);
+  padding-right: 0;
+}
 dd{
 
-  padding-left: calc(var(--padding) *3 );
+  padding-left: calc(var(--rel-padding) *6 );
 }
 dt,th{
   font-weight: bold;
 }
+
 /*forms*/
-input{
+input,button, textarea,option,select{
+  border-radius: .1rem;
   border: none;
+  color: var(--background-default);
+  background-color: var(--background-input);
 }
+input:not([type="submit"]){
+    padding-top: calc(var(--rel-padding) / 2);
+    padding-bottom: calc(var(--rel-padding) / 2);
+    padding-right: var(--rel-padding);
+    padding-left: var(--rel-padding);
+
+    margin-top: calc(var(--rel-padding) / 2);
+    margin-bottom: calc(var(--rel-padding) / 2);
+    margin-right: 0;
+    margin-left: 0;
+}
+input[type="submit"],button{
+  border-radius: .1rem;
+    margin-top: calc(var(--rel-padding) / 2);
+    margin-bottom: calc(var(--rel-padding) / 2);
+    width: fit-content;
+  margin-left:  auto;
+  margin-right:  auto;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: calc(var(--rel-padding) * 2);
+
+}
+select{
+  font-size: .8rem;
+}
+
 form fieldset > div{
+  width: 100%;
   display: flex;
 }
-form fieldset div > div{
-  flex-direction: column;
-  display: flex;
+form fieldset div label{
+  flex: 1;
 }
-form fieldset div input{
-  flex-grow: 2;
+form fieldset div p{
+  display: none;
+}
+form fieldset div input,form fieldset div textarea{
+  flex: 1;
+  max-width: 100%;
+   resize:vertical;
+}
+
+meter{
+  vertical-align: -0.45rem;
+  height: 1.5rem;
+  line-height: 0rem;
+  padding: 0px;
+}
+
+
+/*   Hovers   */
+a[href]:hover, button:hover, input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgb(210, 210, 210);
+}
+a[href]:hover{
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 
 
 /*text elements*/
 p{}
+small{
+  font-size: .75rem;
+}
+s{
+ color: var(--color-disabled);
+}
 a{
   color: var(--color-link);
 }
@@ -94,46 +188,61 @@ h6{
 }
   *{
     /**********working scale for responsive***********/
-    --scale:        var(--txt-size) ;
-    list-style: none;
-    text-decoration: none;
-    margin: 0px;
-    max-width: 100%;
-    padding: var(--padding);
+    --rel-scale:        var(--txt-size) ;
+    --rel-padding:         var(--padding);
 
   }
   @media only screen and (min-width: 576px ) {
 
     *{
-      --scale:     calc(var(--txt-size) / 1.1);
+      --rel-scale:     calc(var(--txt-size) / 1.5);
+      --rel-padding:     calc(var(--padding) / 1.5);
     }
 
   }
 
   @media only screen and (min-width: 768px ) {
     *{
-      --scale:      calc(var(--txt-size) / 1.1);
+      --rel-scale:      calc(var(--txt-size) / 2);
+      --rel-padding:     calc(var(--padding) / 2);
     }
 
   }
   @media only screen and (min-width: 992px ) {
     *{
-      --scale:       calc(var(--txt-size) / 1.1);
-    }
-
-  }
-  @media only screen and (min-width: 992px ) {
-    *{
-      --scale:        calc(var(--txt-size) / 1.1);
+      --rel-scale:       calc(var(--txt-size) / 2.5);
+      --rel-padding:     calc(var(--padding) / 2.5);
     }
 
   }
   @media only screen and (min-width: 1200px ) {
+    *{
+      --rel-scale:       calc(var(--txt-size) / 3);
+      --rel-padding:     calc(var(--padding) / 3);
+    }
 
   }
   @media only screen and (min-width: 1400px ) {
     *{
-      --scale:        calc(var(--txt-size) );
+      --rel-scale:        calc(var(--txt-size) / 5);
+      --rel-padding:     calc(var(--padding) / 5);
+    }
+    body > section, body > *:not(hr){
+      max-width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+  @media only screen and (min-width: 2200px ) {
+    *{
+      --rel-scale:        calc(var(--txt-size) / 7);
+      --rel-padding:     calc(var(--padding) / 7);
+    }
+    body > section, body > *:not(hr){
+      max-width: 40%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
   }
@@ -142,14 +251,17 @@ h6{
 /* user variables */
   *{
 
-    --bg:              #101010;
-    --color:           #ddd;
-    --color-link:      #f50;
-    --color-link:      #f50;
-    --txt-size:         5vw;
+    --background-default:   #101010;
+    --background-input:   rgb(239, 239, 239);
+    --background-nav:   linear-gradient(150deg, rgba(255,255,255,0.08307072829131656) 0%, rgba(255,255,255,0.0) 50%);
+    --color-default:      #ddd;
+    --color-navigation:   #ff8a5f;
+    --color-link:         #86c1ff;
+    --color-disabled:     #363636;
 
-    --padding:         2vw;
-    --margin:          2vw;
+    --txt-size:           5vw;
+
+    --padding:            2vw;
 
 
   }
@@ -163,7 +275,7 @@ h6{
     <h1>HTML</h1>
     <h2>Every html element in one place. Just waiting to be styled.</h1>
     </header>
-
+<hr/>
     <section>
       <nav>
       <a href="" class="title" title="test"><h1 >Site title</h1></a>
@@ -306,45 +418,67 @@ h6{
 
           <legend>Legend Example</legend>
 
-
-          <div>
           <div>
             <label>Text Input Label</label>
-            <label>Password</label>
-            <label for="first-name">First Name</label>
-            <label for="last-name">Last Name</label>
-            <label for="email">Email</label>
-            <label for="gender">Dropdown</label>
-            <label>Radio Buttons</label>
-            <label for="url">URL Input</label>
-            <label>Text area</label>
-            <label> This is a checkbox.</label>
+            <input type="text"/>
+            <p >Helper text if necessary.</p>
           </div>
 
           <div>
-            <input type="text"/>
-            <p >Helper text if necessary.</p>
+            <label>Password</label>
             <input type="password"/>
             <p >Error messages when appropriate.</p>
+          </div>
+
+          <div>
+            <label for="first-name">First Name</label>
             <input type="text" id="first-name"/>
+          </div>
+
+          <div>
+            <label for="last-name">Last Name</label>
             <input type="text" id="last-name"/>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
             <input type="email" id="email"/>
+          </div>
+
+
+          <div>
+            <label for="gender">Dropdown</label>
             <select>
               <option>Option 1</option>
               <option>Option 2</option>
               <option>Option 3</option>
             </select>
+          </div>
+
+          <div>
+            <label>Radio Buttons</label>
             <ul>
               <li><label><input type="radio"/> Label 1</label></li>
               <li><label><input type="radio"/> Label 2</label></li>
               <li><label><input type="radio"/> Label 3</label></li>
             </ul>
+          </div>
+
+          <div>
+            <label for="url">URL Input</label>
             <input type="url" placeholder="http://mrmrs.cc"/>
-            <textarea></textarea><input type="checkbox"/>
-          </div>
           </div>
 
+          <div>
+            <label>Text area</label>
+          </div>
+          <div>
+            <textarea></textarea>
+          </div>
 
+          <div>
+            <label><input type="checkbox"/> This is a checkbox.</label>
+          </div>
 
           <div>
             <input type="submit" value="Submit"/>
@@ -446,7 +580,9 @@ h6{
     <section>
       <h1 >New hawtness</h1>
       <progress value="80" max="100">80 %</progress>
-      <p >We are this close to the goal: <meter min="0" max="1000" value="824">$824</meter>.</p>
+      <p >We are this close to the goal: <meter min="0" max="100"
+       low="33" high="66" optimum="80"
+       value="40">$824</meter>.</p>
     </section>
 
     <section>
@@ -456,7 +592,7 @@ h6{
       <small>This is for things like copyright info</small>
       <s>Content that isn't accurate or relevant anymore.</s>
       <span>Generic span wrapper</span>
-      <abbr>HTML How to meet ladies</abbr>
+      <abbr title="How To Meet Ladies">HTML <s>(&lt;abbr&gt;)</s></abbr>
       <p >This is inline text with <sub>subscript</sub> and <sup>superscript</sup> elements.</p>
       <p >
         <var>f</var>(<var>x</var>) = <var>a</var><sub>0</sub> + <var>a</var><sub>1</sub><var>x</var> +
