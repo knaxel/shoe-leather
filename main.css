@@ -1,0 +1,320 @@
+
+
+/************************************************************************/
+/**| Shoe Leather - main.css                                           **/
+/**| by Snow + Knaxel                                                  **/
+/************************************************************************/
+
+/************************************************************************/
+/*************************** CORE / ROOT ********************************/
+/************************************************************************/
+
+*{
+  list-style: none;
+  margin: 0px;
+  max-width: 100%;
+  padding: var(--rel-padding);
+}
+html{
+  font-family: var(--font);
+  font-size: var(--rel-scale);
+  line-height: 1;
+  color: var(--color-default);
+  background:  var(--background-default);
+  width: auto ;
+  max-width: 100vw;
+}
+
+
+/************************************************************************/
+/************************** BLOCK ELEMENTS ******************************/
+/************************************************************************/
+html,body, header, main, footer,div,nav,hr,img,section,ul, dl, ol{
+  display: block;
+  padding: 0px;
+}
+
+
+/************************************************************************/
+/*************************** INLINE ELEMENTS ****************************/
+/************************************************************************/
+span, var, sub, sup{
+  padding: 0px;
+}
+pre {
+  overflow-x: scroll;
+}
+progress{
+  padding: var(--rel-padding);
+  margin: var(--rel-padding);
+}
+meter{
+  vertical-align: -0.45rem;
+  height: 1.5rem;
+  line-height: 0rem;
+  padding: 0px;
+}
+
+
+/************************************************************************/
+/***************************** SECTIONING/GRID **************************/
+/************************************************************************/
+section{
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 1400px ) {
+  body > section{
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 2200px ) {
+  body > section{
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/************************************************************************/
+/******************************** TABLES ********************************/
+/************************************************************************/
+table, tr{
+  width: 100%;
+}
+td{
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+
+
+/************************************************************************/
+/******************************** NAVBAR ********************************/
+/************************************************************************/
+nav{
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  background: var(--background-nav);
+}
+nav ul, nav ol, nav dl {
+  flex-grow: 1  ;
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
+  }
+nav li{
+  width: auto;
+  padding: 0;
+  min-width: fit-content;
+}
+nav a {
+
+  display: block;
+  text-decoration: none;
+  padding: calc(var(--rel-padding));
+  color: var(--color-navigation);
+  line-height: 1.5rem;
+  min-width: fit-content;
+}
+nav > a:first-child{
+  min-width: fit-content;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+@media only screen and (min-width: 768px ) {
+
+nav{
+  flex-direction: row;
+}
+nav ul, nav ol, nav dl {
+  flex-direction: row;
+}
+
+}
+
+/************************************************************************/
+/********************************* LISTS ********************************/
+/************************************************************************/
+ol *,ul > *,dl *{ 
+  padding-top: calc(var(--rel-padding) / 2);
+  padding-bottom: calc(var(--rel-padding) / 2);
+  padding-left: calc(var(--rel-padding) * 3);
+  padding-right: 0;
+}
+dd{
+
+  padding-left: calc(var(--rel-padding) *6 );
+}
+dt,th{
+  font-weight: bold;
+}
+
+/************************************************************************/
+/********************************* FORMS ********************************/
+/************************************************************************/
+input,button, textarea,option,select{
+  border-radius: .1rem;
+  border: none;
+  color: var(--background-default);
+  background-color: var(--background-input);
+}
+input:not([type="submit"]){
+  padding-top: calc(var(--rel-padding) / 2);
+  padding-bottom: calc(var(--rel-padding) / 2);
+  padding-right: var(--rel-padding);
+  padding-left: var(--rel-padding);
+
+  margin-top: calc(var(--rel-padding) / 2);
+  margin-bottom: calc(var(--rel-padding) / 2);
+  margin-right: 0;
+  margin-left: 0;
+}
+input[type="submit"],button{
+  border-radius: .1rem;
+  margin-top: calc(var(--rel-padding) / 2);
+  margin-bottom: calc(var(--rel-padding) / 2);
+  width: fit-content;
+  margin-left:  auto;
+  margin-right:  auto;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: calc(var(--rel-padding) * 2);
+
+}
+select{
+  font-size: .8rem;
+}
+
+form fieldset > div{
+  width: 100%;
+  display: flex;
+}
+form fieldset div label{
+  flex: 1;
+}
+form fieldset div p{
+  position: absolute;
+  display: none;
+}
+form fieldset div input,form fieldset div textarea{
+  flex: 1;
+  max-width: 100%;
+  resize:vertical;
+}
+
+
+
+/************************************************************************/
+/********************************* Hovers *******************************/
+/************************************************************************/
+a[href]:hover, button:hover, input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgb(210, 210, 210);
+}
+a[href]:hover{
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+
+
+/************************************************************************/
+/********************************text elements***************************/
+/************************************************************************/
+h1 ~ p,h2 ~ p,h3 ~ p,h4 ~ p,h5 ~ p,* ~ *{
+  padding-top: 0px;
+}
+small{
+  font-size: .75rem;
+}
+s{
+  color: var(--color-disabled);
+}
+a{
+  color: var(--color-link);
+}
+
+h1{
+  font-size: 1.7rem;
+  line-height: 1.5rem;
+}
+h2{
+  font-size: 1.5rem;
+  line-height: 1.45rem;
+}
+h3{
+  font-size: 1.3rem;
+  line-height: 1.2rem;
+}
+h4{
+  font-size: 1.2rem;
+  line-height: 1.1rem;
+}
+h5{
+  font-size: 1.1rem;
+  line-height: 1.0rem;
+}
+h6{
+  font-size: 1rem;
+  line-height: .9rem;
+}
+/************************************************************************/
+/**********Working vars and responsive vars***********/
+*{
+  --rel-scale:        var(--txt-size) ;
+  --rel-padding:         var(--padding);
+
+}
+@media only screen and (min-width: 576px ) {
+
+  *{
+    --rel-scale:     calc(var(--txt-size) / 1.5);
+    --rel-padding:     calc(var(--padding) / 1.5);
+  }
+
+}
+
+@media only screen and (min-width: 768px ) {
+  *{
+    --rel-scale:      calc(var(--txt-size) / 2);
+    --rel-padding:     calc(var(--padding) / 2);
+  }
+
+}
+@media only screen and (min-width: 992px ) {
+  *{
+    --rel-scale:       calc(var(--txt-size) / 2.5);
+    --rel-padding:     calc(var(--padding) / 2.5);
+  }
+
+}
+@media only screen and (min-width: 1200px ) {
+  *{
+    --rel-scale:       calc(var(--txt-size) / 3);
+    --rel-padding:     calc(var(--padding) / 3);
+  }
+
+}
+@media only screen and (min-width: 1400px ) {
+
+  *{
+    --rel-scale:        calc(var(--txt-size) / 5);
+    --rel-padding:     calc(var(--padding) / 5);
+  }
+
+}
+@media only screen and (min-width: 2200px ) {
+  *{
+    --rel-scale:        calc(var(--txt-size) / 7);
+    --rel-padding:     calc(var(--padding) / 7);
+  }
+
+}
