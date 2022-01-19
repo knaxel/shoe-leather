@@ -1,0 +1,14 @@
+to-do (shoe-leather-light) :
+[x] layout systems (section,main,header,etx)
+[-] handle overflow for h1,h2,etc
+[-] navigation bar <dl> difference
+
+to-do (shoe-leather) :
+[-] CSS class/attribute translations ("p-1" = "style='padding:1rem;'")
+  [x] padding,margin,size adjustment
+  [-] 
+[-] synonyms e.g. "p-lg" = "p-3"
+[-] conglomerates e.g "lg" = "p-lg m-lg s-lg"
+[-] layout systems :
+  [x] row,col,cell grid system
+[-] variable color system :

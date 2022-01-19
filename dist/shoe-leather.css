@@ -1,0 +1,465 @@
+/************************************************************************/
+/************************** BLOCK ELEMENTS ******************************/
+/************************************************************************/
+html, body, header, main, footer, div, nav, hr, img, section, ul, dl, ol {
+  display: block;
+  padding: 0px;
+}
+
+/************************************************************************/
+/*************************** INLINE ELEMENTS ****************************/
+/************************************************************************/
+span, var, sub, sup {
+  padding: 0px;
+}
+
+pre {
+  overflow-x: scroll;
+}
+
+progress {
+  padding: var(--rel-padding);
+  margin: var(--rel-padding);
+}
+
+meter {
+  vertical-align: -0.45rem;
+  height: 1.5rem;
+  line-height: 0rem;
+  padding: 0px;
+}
+
+/************************************************************************/
+/***************************** SECTIONING/GRID **************************/
+/************************************************************************/
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 1400px) {
+  body > section {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (min-width: 2200px) {
+  body > section {
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/************************************************************************/
+/******************************** TABLES ********************************/
+/************************************************************************/
+table, tr {
+  width: 100%;
+}
+
+td {
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/************************************************************************/
+/******************************** NAVBAR ********************************/
+/************************************************************************/
+nav {
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  background: var(--background-nav);
+}
+
+nav ul, nav ol, nav dl {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
+}
+
+nav li {
+  width: auto;
+  padding: 0;
+  min-width: fit-content;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  padding: calc(var(--rel-padding));
+  color: var(--color-navigation);
+  line-height: 1.5rem;
+  min-width: fit-content;
+}
+
+nav > a:first-child {
+  min-width: fit-content;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+@media only screen and (min-width: 768px) {
+  nav {
+    flex-direction: row;
+  }
+
+  nav ul, nav ol, nav dl {
+    flex-direction: row;
+  }
+}
+/************************************************************************/
+/********************************* LISTS ********************************/
+/************************************************************************/
+ol *, ul > *, dl * {
+  padding-top: calc(var(--rel-padding) / 2);
+  padding-bottom: calc(var(--rel-padding) / 2);
+  padding-left: calc(var(--rel-padding) * 3);
+  padding-right: 0;
+}
+
+dd {
+  padding-left: calc(var(--rel-padding) * 6);
+}
+
+dt, th {
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+/************************************************************************/
+/********************************* FORMS ********************************/
+/************************************************************************/
+input, button, textarea, option, select {
+  border-radius: 0.1rem;
+  border: none;
+  color: var(--background-default);
+  background-color: var(--background-input);
+}
+
+input:not([type=submit]) {
+  padding-top: calc(var(--rel-padding) / 2);
+  padding-bottom: calc(var(--rel-padding) / 2);
+  padding-right: var(--rel-padding);
+  padding-left: var(--rel-padding);
+  margin-top: calc(var(--rel-padding) / 2);
+  margin-bottom: calc(var(--rel-padding) / 2);
+  margin-right: 0;
+  margin-left: 0;
+}
+
+input[type=submit], button {
+  border-radius: 0.1rem;
+  margin-top: calc(var(--rel-padding) / 2);
+  margin-bottom: calc(var(--rel-padding) / 2);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: calc(var(--rel-padding) * 2);
+}
+
+select {
+  font-size: 0.8rem;
+}
+
+form fieldset > div {
+  width: 100%;
+  display: flex;
+}
+form fieldset div label {
+  flex: 1;
+}
+form fieldset div p {
+  position: absolute;
+  display: none;
+}
+form fieldset div input, form fieldset div textarea {
+  flex: 1;
+  max-width: 100%;
+  resize: vertical;
+}
+
+/************************************************************************/
+/********************************* Hovers *******************************/
+/************************************************************************/
+a[href]:hover, button:hover, input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #d2d2d2;
+}
+
+a[href]:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/************************************************************************/
+/********************************text elements***************************/
+/************************************************************************/
+h1 ~ p, h2 ~ p, h3 ~ p, h4 ~ p, h5 ~ p, * ~ * {
+  padding-top: 0px;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+s {
+  color: var(--color-disabled);
+}
+
+a {
+  color: var(--color-link);
+}
+
+h1 {
+  font-size: 1.7rem;
+  line-height: 1.6rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.4rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  line-height: 1.2rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.1rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1rem;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 0.9rem;
+}
+
+/*
+Variable Reference : 
+
+	Relative: 
+	--rel-scale
+	--rel-padding
+
+	fixed: 
+	--font
+
+	--background-default
+	--background-input
+	--background-nav
+
+	--color-default
+	--color-link
+	--color-disabled
+	--color-navigation
+
+	 --txt-size
+
+	 --padding
+
+*/
+/************************************************************************/
+/************************** ROW | COL |CELL *****************************/
+/************************************************************************/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cell {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--rel-padding);
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .cell, .col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+}
+/************************************************************************/
+/******************************** TWEAKERS ******************************/
+/************************************************************************/
+.p-0 {
+  padding: 0rem;
+}
+
+.m-0 {
+  margin: 0rem;
+}
+
+.s-0 {
+  font-size: 0rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.s-1 {
+  font-size: 1rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.s-2 {
+  font-size: 2rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.s-3 {
+  font-size: 3rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.s-4 {
+  font-size: 4rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.s-5 {
+  font-size: 5rem;
+}
+
+/************************************************************************/
+/**| Shoe Leather - main.css                                           **/
+/**| by Snow + Knaxel                                                  **/
+/************************************************************************/
+:root {
+  --font: Consolas, monaco;
+  --background-default: #101010;
+  --background-input: rgb(239, 239, 239);
+  --background-nav: linear-gradient(150deg, rgba(255,255,255,0.08307072829131656) 0%, rgba(255,255,255,0.0) 50%);
+  --color-default: #ddd;
+  --color-navigation: #ff8642;
+  --color-link: #a4ade9;
+  --color-disabled: #363636;
+  --txt-size: 5vw;
+  --padding: 2vw;
+  --margin: 2vw;
+}
+
+* {
+  margin: 0px;
+  padding: var(--rel-padding);
+}
+
+html {
+  font-family: var(--font);
+  font-size: var(--rel-scale);
+  line-height: 1;
+  color: var(--color-default);
+  background: var(--background-default);
+  width: auto;
+  max-width: 100vw;
+}
+
+@media screen and (min-width: 0px) {
+  :root {
+    --rel-scale: calc(var(--txt-size) / 1);
+    --rel-padding: calc(var(--padding) / 1);
+    --rel-margin: calc(var(--margin) / 1);
+  }
+}
+@media screen and (min-width: 576px) {
+  :root {
+    --rel-scale: calc(var(--txt-size) / 1.5);
+    --rel-padding: calc(var(--padding) / 1.5);
+    --rel-margin: calc(var(--margin) / 1.5);
+  }
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --rel-scale: calc(var(--txt-size) / 2);
+    --rel-padding: calc(var(--padding) / 2);
+    --rel-margin: calc(var(--margin) / 2);
+  }
+}
+@media screen and (min-width: 992px) {
+  :root {
+    --rel-scale: calc(var(--txt-size) / 2.5);
+    --rel-padding: calc(var(--padding) / 2.5);
+    --rel-margin: calc(var(--margin) / 2.5);
+  }
+}
+@media screen and (min-width: 1200px) {
+  :root {
+    --rel-scale: calc(var(--txt-size) / 3);
+    --rel-padding: calc(var(--padding) / 3);
+    --rel-margin: calc(var(--margin) / 3);
+  }
+}
+@media screen and (min-width: 1400px) {
+  :root {
+    --rel-scale: calc(var(--txt-size) / 5);
+    --rel-padding: calc(var(--padding) / 5);
+    --rel-margin: calc(var(--margin) / 5);
+  }
+}
+@media screen and (min-width: 2200px) {
+  :root {
+    --rel-scale: calc(var(--txt-size) / 7);
+    --rel-padding: calc(var(--padding) / 7);
+    --rel-margin: calc(var(--margin) / 7);
+  }
+}
+
+/*# sourceMappingURL=shoe-leather.css.map */

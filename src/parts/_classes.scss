@@ -1,0 +1,79 @@
+@use "sass:string";
+/*
+Variable Reference : 
+
+	Relative: 
+	--rel-scale
+	--rel-padding
+
+	fixed: 
+	--font
+
+	--background-default
+	--background-input
+	--background-nav
+
+	--color-default
+	--color-link
+	--color-disabled
+	--color-navigation
+
+	 --txt-size
+
+	 --padding
+
+*/
+
+@function option($id) {
+	$s : "";
+	@each $i in $id{
+		$s :$s+"."+$i   ; //+ " , *["+ $i +"],";
+	}
+	$t: string.slice($s,-1);
+  @return $s;
+}
+
+/************************************************************************/
+/************************** ROW | COL |CELL *****************************/
+/************************************************************************/
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 100%;
+}
+.col{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.cell{
+	display: block;
+    box-sizing: border-box;
+	width: 100%;
+	padding: var(--rel-padding);
+	max-width: 100%;
+}
+@media only screen and (min-width: 768px ) {
+	.cell,.col{
+		flex-basis: 0;
+		flex-grow: 1;
+		max-width: 100%;
+	}
+
+}
+
+/************************************************************************/
+/******************************** TWEAKERS ******************************/
+/************************************************************************/
+
+@for $i from 0 through 5 {
+	#{option( "p-"+ #{$i}  )} {
+		padding: #{$i}rem;
+	}
+	#{option( "m-"+ #{$i}  )} {
+		margin: #{$i}rem;
+	}
+	#{option( "s-"+ #{$i}  )} {
+		font-size: #{$i}rem;
+	}
+}
