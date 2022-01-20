@@ -1,7 +1,7 @@
 /************************************************************************/
 /************************** BLOCK ELEMENTS ******************************/
 /************************************************************************/
-html, body, header, main, footer, div, nav, hr, img, section, ul, dl, ol {
+html, body, main, header, footer, div, nav, hr, img, section, ul, dl, ol {
   display: block;
   padding: 0px;
 }
@@ -250,30 +250,6 @@ h6 {
   line-height: 0.9rem;
 }
 
-/*
-Variable Reference : 
-
-	Relative: 
-	--rel-scale
-	--rel-padding
-
-	fixed: 
-	--font
-
-	--background-default
-	--background-input
-	--background-nav
-
-	--color-default
-	--color-link
-	--color-disabled
-	--color-navigation
-
-	 --txt-size
-
-	 --padding
-
-*/
 /************************************************************************/
 /************************** ROW | COL |CELL *****************************/
 /************************************************************************/
@@ -307,75 +283,59 @@ Variable Reference :
 /************************************************************************/
 /******************************** TWEAKERS ******************************/
 /************************************************************************/
-.p-0 {
-  padding: 0rem;
+.inline, *[inline] {
+  display: inline;
+  font-size: 1em;
+  line-height: 1em;
+  min-height: 1em;
+  vertical-align: middle;
 }
 
-.m-0 {
+.m-0, *[m-0] {
   margin: 0rem;
 }
 
-.s-0 {
+.s-0, *[s-0] {
   font-size: 0rem;
 }
 
-.p-1 {
-  padding: 1rem;
-}
-
-.m-1 {
+.m-1, *[m-1] {
   margin: 1rem;
 }
 
-.s-1 {
+.s-1, *[s-1] {
   font-size: 1rem;
 }
 
-.p-2 {
-  padding: 2rem;
-}
-
-.m-2 {
+.m-2, *[m-2] {
   margin: 2rem;
 }
 
-.s-2 {
+.s-2, *[s-2] {
   font-size: 2rem;
 }
 
-.p-3 {
-  padding: 3rem;
-}
-
-.m-3 {
+.m-3, *[m-3] {
   margin: 3rem;
 }
 
-.s-3 {
+.s-3, *[s-3] {
   font-size: 3rem;
 }
 
-.p-4 {
-  padding: 4rem;
-}
-
-.m-4 {
+.m-4, *[m-4] {
   margin: 4rem;
 }
 
-.s-4 {
+.s-4, *[s-4] {
   font-size: 4rem;
 }
 
-.p-5 {
-  padding: 5rem;
-}
-
-.m-5 {
+.m-5, *[m-5] {
   margin: 5rem;
 }
 
-.s-5 {
+.s-5, *[s-5] {
   font-size: 5rem;
 }
 
@@ -394,12 +354,14 @@ Variable Reference :
   --color-disabled: #363636;
   --txt-size: 5vw;
   --padding: 2vw;
+  --padding-scale: 2;
   --margin: 2vw;
 }
 
 * {
   margin: 0px;
   padding: var(--rel-padding);
+  max-width: 100%;
 }
 
 html {

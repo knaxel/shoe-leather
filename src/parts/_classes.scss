@@ -1,33 +1,9 @@
 @use "sass:string";
-/*
-Variable Reference : 
-
-	Relative: 
-	--rel-scale
-	--rel-padding
-
-	fixed: 
-	--font
-
-	--background-default
-	--background-input
-	--background-nav
-
-	--color-default
-	--color-link
-	--color-disabled
-	--color-navigation
-
-	 --txt-size
-
-	 --padding
-
-*/
 
 @function option($id) {
 	$s : "";
 	@each $i in $id{
-		$s :$s+"."+$i   ; //+ " , *["+ $i +"],";
+		$s :$s+"."+$i + " , *["+ $i +"],";
 	}
 	$t: string.slice($s,-1);
   @return $s;
@@ -65,12 +41,19 @@ Variable Reference :
 /************************************************************************/
 /******************************** TWEAKERS ******************************/
 /************************************************************************/
+#{option( "inline"  )} {
+	display: inline;
+	font-size: 1em;
+	line-height: 1em;
+	min-height: 1em;
+	vertical-align: middle;
+}
 
+	//		padding: calc(var(--padding-scale)* var(--rel-padding) * #{$i } );
+			// make function to dynamically add and conglomerate them
 @for $i from 0 through 5 {
-	#{option( "p-"+ #{$i}  )} {
-		padding: #{$i}rem;
-	}
-	#{option( "m-"+ #{$i}  )} {
+
+	#{option( "m-"+ #{$i } )} {
 		margin: #{$i}rem;
 	}
 	#{option( "s-"+ #{$i}  )} {
