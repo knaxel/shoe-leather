@@ -9,39 +9,44 @@
 
 //User Variables
 :root{
-  --font:                 Consolas,  monaco;
+  --font:                 "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --background-default:   #101010;
   --background-input:     rgb(239, 239, 239);
-  --background-nav:       linear-gradient(150deg, rgba(255,255,255,0.08307072829131656) 0%, rgba(255,255,255,0.0) 50%);
+  --background-nav:       #101010;
 
   --color-default:        #ddd;
   --color-navigation:     #ff8642;
   --color-link:           #a4ade9;
   --color-disabled:       #363636;
 
-  --txt-size:           5vw; 
-
+  --txt-size:           62.5%;
   --padding:            2vw;
   --padding-scale:      2;
   --margin:             2vw; 
+
+
+
 
 }
 
 // CORE CSS
 *{
   margin: 0px;
-  padding: var(--rel-padding);
   max-width: 100%;
+  font-weight: 300;
 }
 html{
-  font-family: var(--font);
-  font-size: var(--rel-scale);
+  font-size: var(--txt-size);
   line-height: 1;
   color: var(--color-default);
   background:  var(--background-default);
   width: auto ;
   max-width: 100vw;
+  font-family:  "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body{
+  font-size: 1.5rem;
 }
 
 $breakpoints: (
@@ -51,15 +56,15 @@ $breakpoints: (
   lg:   (0992px 2.5),
   xl:   (1200px 3.0),
   xxl:  (1400px 5.0),
-  xxxl: (2200px 7.0)
+ xxxl: (2200px 7.0)
 ) !default;
 
 @each $bp in map-keys($breakpoints) {
   @media screen and (min-width: #{nth(map-get($breakpoints,$bp),1)} ){
     :root{
-      --rel-scale:       calc(var(--txt-size) / #{nth(map-get($breakpoints,$bp),2)});
+      //--rel-scale:       calc(var(--txt-size) / #{nth(map-get($breakpoints,$bp),2)});
       --rel-padding:     calc(var(--padding) / #{nth(map-get($breakpoints,$bp),2)});
       --rel-margin:      calc(var(--margin) / #{nth(map-get($breakpoints,$bp),2)});
     }
   }
-}
+} 

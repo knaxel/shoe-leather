@@ -1,17 +1,21 @@
 
-
 /************************************************************************/
-/************************** BLOCK ELEMENTS ******************************/
-/************************************************************************/
-html,body, main,header, footer,div,nav,hr,img,section,ul, dl, ol{
+html,body,div,nav,img,section,ul, dl, ol{
   display: block;
   padding: 0px;
 }
+main,header, footer{
+  display:flex;
+}
+/************************************************************************/
+figure , caption, figcaption{
 
-/************************************************************************/
-/*************************** INLINE ELEMENTS ****************************/
-/************************************************************************/
-span, var, sub, sup{
+  padding: var(--rel-padding);
+}
+hr{
+  margin-top: var(--rel-margin)
+}
+span, var, sub, sup, meter{
   padding: 0px;
 }
 pre {
@@ -25,16 +29,12 @@ meter{
   vertical-align: -0.45rem;
   height: 1.5rem;
   line-height: 0rem;
-  padding: 0px;
 }
-
- 
-/************************************************************************/
-/***************************** SECTIONING/GRID **************************/
 /************************************************************************/
 section{
   display: flex;
   flex-direction: column;
+  padding:0px;
 }
 
 @media only screen and (min-width: 1400px ) {
@@ -54,10 +54,8 @@ section{
 }
 
 /************************************************************************/
-/******************************** TABLES ********************************/
-/************************************************************************/
-table, tr{
-  width: 100%;
+table{
+  padding: var(--rel-padding);
 }
 td{
   max-width: 0;
@@ -66,47 +64,64 @@ td{
   white-space: nowrap;
 
 }
-
-
 /************************************************************************/
-/******************************** NAVBAR ********************************/
-/************************************************************************/
-nav{
+nav,nav.cell{
+  padding:0px;
   display: flex;
   flex-direction: column;
-  flex-basis: auto;
-  background: var(--background-nav);
+  flex-basis: 0;
+  background: var(--background-nav);    
+
+
+  min-width: fit-content;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 nav ul, nav ol, nav dl {
   flex-grow: 1  ;
-  display: flex;
+  display:flex;
   flex-direction: column;
   text-overflow: ellipsis;
   flex-wrap: nowrap;
+  line-height:5rem;
 }
 nav li{
   width: auto;
-  padding: 0;
   min-width: fit-content;
+  display: block;
+  padding:0;
+}
+nav > a:first-child {
+  flex-grow: 0  ;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration: none;
+  padding: calc(var(--rel-padding) * 3);
 }
 nav a {
-
-  display: block;
+  display: flex;
+  justify-content:center;
+  align-items:center;
   text-decoration: none;
   padding: calc(var(--rel-padding));
-  color: var(--color-navigation);
-  line-height: 1.5rem;
-  min-width: fit-content;
+  color:var(--color-nav);
 }
-nav > a:first-child{
+nav > a:last-child {
+  flex-grow: 0  ;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration: none;
+  padding: calc(var(--rel-padding));
+}
+nav > ul{
   min-width: fit-content;
-  font-size: 1.7rem;
-  font-weight: 800;
 }
 @media only screen and (min-width: 768px ) {
 
   nav{
-    flex-direction: row;
+    flex-flow: row ;
   }
   nav ul, nav ol, nav dl {
     flex-direction: row;
@@ -114,8 +129,6 @@ nav > a:first-child{
 
 }
 
-/************************************************************************/
-/********************************* LISTS ********************************/
 /************************************************************************/
 ol *,ul > *,dl *{ 
   padding-top: calc(var(--rel-padding) / 2);
@@ -131,11 +144,9 @@ dt,th{
   font-weight: bold;
 }
 li{
-
+  display:flex;
   list-style: none;
 }
-/************************************************************************/
-/********************************* FORMS ********************************/
 /************************************************************************/
 input,button, textarea,option,select{
   border-radius: .1rem;
@@ -161,8 +172,7 @@ input[type="submit"],button{
   width: fit-content;
   margin-left:  auto;
   margin-right:  auto;
-  font-size: .8rem;
-  font-weight: 600;
+  font-size: 1.5rem;
   padding: calc(var(--rel-padding) * 2);
 
 }
@@ -191,8 +201,6 @@ form{
   }
 }
 /************************************************************************/
-/********************************* Hovers *******************************/
-/************************************************************************/
 a[href]:hover, button:hover, input[type="submit"]:hover {
   cursor: pointer;
   background-color: rgb(210, 210, 210);
@@ -200,13 +208,8 @@ a[href]:hover, button:hover, input[type="submit"]:hover {
 a[href]:hover{
   background-color: rgba(255, 255, 255, 0.04);
 }
+/************************************************************************/
 
-/************************************************************************/
-/********************************text elements***************************/
-/************************************************************************/
-h1 ~ p,h2 ~ p,h3 ~ p,h4 ~ p,h5 ~ p,* ~ *{
-  padding-top: 0px;
-}
 small{
   font-size: .75rem;
 }
@@ -215,29 +218,34 @@ s{
 }
 a{
   color: var(--color-link);
+  vertical-align: middle;
 }
+blockquote a:last-child{
+  display:block;
+}
+h1,h2,h3,h4,h5,h6,p,address, time{
 
-h1{
-  font-size: 1.7rem;
-  line-height: 1.6rem;
+  padding-left: var(--rel-padding);
 }
-h2{
+h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+}
+h2 {
+  font-size: 3.6rem;
+}
+h3 {
+  font-size: 3.0rem;
+}
+h4 {
+  font-size: 2.4rem;
+}
+h5 {
+  font-size: 1.8rem;
+}
+h6 {
   font-size: 1.5rem;
-  line-height: 1.4rem;
 }
-h3{
-  font-size: 1.3rem;
-  line-height: 1.2rem;
-}
-h4{
-  font-size: 1.2rem;
-  line-height: 1.1rem;
-}
-h5{
-  font-size: 1.1rem;
-  line-height: 1.0rem;
-}
-h6{
-  font-size: 1rem;
-  line-height: .9rem;
+h1 > a{
+  display:block;
 }

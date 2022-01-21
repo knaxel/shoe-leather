@@ -8,10 +8,6 @@
 	$t: string.slice($s,-1);
   @return $s;
 }
-
-/************************************************************************/
-/************************** ROW | COL |CELL *****************************/
-/************************************************************************/
 .row{
 	display: flex;
 	flex-wrap: wrap;
@@ -23,11 +19,11 @@
 	width: 100%;
 }
 .cell{
-	display: block;
+	display: flex;
     box-sizing: border-box;
-	width: 100%;
 	padding: var(--rel-padding);
 	max-width: 100%;
+	width:100%;
 }
 @media only screen and (min-width: 768px ) {
 	.cell,.col{
@@ -38,23 +34,20 @@
 
 }
 
-/************************************************************************/
-/******************************** TWEAKERS ******************************/
-/************************************************************************/
-#{option( "inline"  )} {
-	display: inline;
-	font-size: 1em;
-	line-height: 1em;
-	min-height: 1em;
-	vertical-align: middle;
+img.resp {
+	width:1rem;
 }
 
-	//		padding: calc(var(--padding-scale)* var(--rel-padding) * #{$i } );
-			// make function to dynamically add and conglomerate them
+.right{
+	justify-content:right;
+}
 @for $i from 0 through 5 {
 
 	#{option( "m-"+ #{$i } )} {
 		margin: #{$i}rem;
+	}
+	#{option( "p-"+ #{$i } )} {
+		padding: #{$i}rem;
 	}
 	#{option( "s-"+ #{$i}  )} {
 		font-size: #{$i}rem;

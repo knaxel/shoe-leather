@@ -2,37 +2,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="shoe-leather.css"  rel="stylesheet"/>
   <meta charset="UTF-8" name="viewport" content="width=device-width" />
   <title>test</title>
-  <link href="shoe-leather.css"  rel="stylesheet"/>
-  <style >
-/* user/theme variables */
 
 
-
-</style>
 </head>
 <body>
   <section>
       <header>
-        <img class="inline" src="../shoe-leather/shoe-leather-16.png"/>
+        <figure>
+        <img class="resp" src="../shoe-leather/shoe-leather-256.png"/>
+      </figure>
         <h1 class="p-1 p-3" >Shoe-Leather</h1>
         <h2>Every html element in one place. Just waiting to be styled.</h2>
       </header>
     </section>
     <hr/>
-    <section>
-      <nav>
-        <a href="" title="test">Site title</a>
-        <ul>
-          <li> <a href="#" title="Home">Home</a> </li>
-          <li> <a href="#" title="About">About</a> </li>
-          <li> <a href="#" title="Sign Up">Sign Up</a> </li>
-          <li> <a href="#" title="Contact">Contact</a> </li>
-          <li> <a href="#" title="Careers">Careers</a> </li>
-        </ul>
-        <a href="#">extra</a>
-      </nav>
+    <section >
+        <nav  >
+            <a  href="" title="test"><h5 class=" ">Site title</h5></a> 
+        
+          <ul>
+            <li> <a href="#" title="Home">Home</a> </li>
+            <li> <a href="#" title="About">About</a> </li>
+            <li> <a href="#" title="Sign Up">Sign Up</a> </li>
+            <li> <a href="#" title="Contact">Contact</a> </li>
+            <li> <a href="#" title="Careers">Careers</a> </li>
+          </ul>
+      <a  href="#" >extra</a>
+        </nav>
     </section>
     <section>
       <div >
@@ -59,47 +59,11 @@
     </section>
 
     <section>
-      <h1 >Headings &amp; Copy</h1>
       <h1 >First Header h1</h1>
-      <p >
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-        praesentium voluptatum deleniti atque corrupti quos.
-      </p>
       <h2>Second header h2</h2>
-      <p >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
       <h3>Third header h3</h3>
-      <p >
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-        praesentium voluptatum deleniti atque corrupti quos dolores et quas
-        molestias excepturi sint occaecati cupiditate non provident, similique sunt
-        in culpa qui officia deserunt mollitia animi, id est laborum et dolorum
-        fuga. Et harum quidem rerum facilis est et expedita distinctio.
-      </p>
       <h4>Fourth header h4</h4>
-      <p >
-        Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-        consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt
-        ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-        veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
-        ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-        qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum
-        qui dolorem eum fugiat quo voluptas nulla pariatur?"
-      </p>
       <h5>Fifth header h5</h5>
-      <p >
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-        veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-        ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-      </p>
       <h6>Sixth header h6</h6>
       <p >
         At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
@@ -109,8 +73,8 @@
     <hr/>
     <section>
       <h1 >Links</h1>
-      <a href="#">Sample text link</a>
-      <a href="#">Sample button link</a>
+      <p ><a href="#">Sample text link</a></p>
+      <p ><a href="#">Sample button link</a></p>
     </section>
     <hr/>
     <section>
@@ -276,9 +240,9 @@
         </p>
         <blockquote>
           <p >
-            This is a GREAT pull quote.
+            This is a GREAT pull quote.<a href="#">- Author</a>
           </p>
-          <a href="#">- Author</a>
+          
         </blockquote>
         <p >
           Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
@@ -357,10 +321,12 @@
         <header>
           <h1 >Random Stuff</h1>
         </header>
+        <p>
         <small>This is for things like copyright info</small>
         <s>Content that isn't accurate or relevant anymore.</s>
         <span>Generic span wrapper</span>
         <abbr title="How To Meet Ladies">HTML <s>(&lt;abbr&gt;)</s></abbr>
+      </p>
         <p >This is inline text with <sub>subscript</sub> and <sup>superscript</sup> elements.</p>
         <p >
           <var>f</var>(<var>x</var>) = <var>a</var><sub>0</sub> + <var>a</var><sub>1</sub><var>x</var> +
@@ -418,9 +384,6 @@
               <th>Address</th>
             </tr>
           </thead>
-          <tfoot>
-            Table footer info
-          </tfoot>
           <tbody>
             <tr>
               <td>#999-32ac</td>
@@ -435,12 +398,19 @@
               <td>999 Spruce Lane, Somewhere, CA 94101</td>
             </tr>
           </tbody>
+          <tfoot>
+            <tr>
+            <td colspan="4">Table footer info</td>
+          </tr>
+          </tfoot>
         </table>
       </section>
       <section>
         <h1>Footer</h1>
         <footer>
+          <p>
           <small>© 2014 Some company name</small>
+          </p>
           <address>email@email.com</address>
         </footer>
       </section>
