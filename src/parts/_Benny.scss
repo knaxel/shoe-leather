@@ -1,29 +1,34 @@
 body{}
 
 :root{
-	--color-active: #eee;
-	--red: #ff0055;
+  --color-active: #fff;
+  --color-inactive: #ddd;
+  --red: #ff0055;
 }
 
 
 button{
-	background-color: var(--color-default);
-    color: var(--background-default);
-    border: solid 1px var(--color-default);
+  background-color: var(--color-inactive);
+  color: var(--background-default);
+  border: solid 1px var(--color-inactive);
 }
-button:hover{
-	border-color: var(--color-active);
-	background-color: var(--color-active);
+
+	button:hover{
+	  border-color: var(--color-active);
+	  background-color: var(--color-active);
+	}
+
+button.bg-none{
+  background-color: var(--background-default);
+  color: var(--color-inactive);
+  border: solid 1px var(--color-inactive);
 }
-.bg-none{
-	background-color: var(--background-default);
-}
-button.bg-none:hover{
-	border-color: var(--color-active);
-	color: var(--color-active);
-}
+	button.bg-none:hover{
+	  border-color: var(--color-active);
+	  color: var(--color-active);
+	}
 
 
 button.red{
-	
+  
 }
