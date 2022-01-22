@@ -1,0 +1,32 @@
+body{}
+
+:root{
+	--color-active: #eee;
+	--red: #ff0055;
+}
+
+
+button{
+	background-color: var(--color-default);
+    color: var(--background-default);
+    border: solid 1px var(--color-default);
+}
+	.button:hover{
+		border-color: var(--color-active);
+		background-color: var(--color-active);
+	}
+
+button.bg-none{
+	background-color: var(--background-default);
+    color: var(--color-default);
+    border: solid 1px var(--color-default);
+}
+	button.bg-none:hover{
+		border-color: var(--color-active);
+		color: var(--color-active);
+	}
+
+
+button.red{
+	
+}
