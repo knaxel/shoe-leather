@@ -5,7 +5,7 @@
 
 @use 'parts/elements';
 @use 'parts/classes';
-
+@use 'parts/knaxel';
 
 
 //User Variables
@@ -13,18 +13,18 @@
   --font:                 "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --background-default:   #101010;
+  --background-other:     #222;
   --background-input:     rgb(239, 239, 239);
-  --background-nav:       #101010;
 
   --color-default:        #ddd;
-  --color-other:        #834d49;
+  --color-other:          #834d49;
   --color-link:           #a4ade9;
   --color-disabled:       #363636;
   --color-active:         #eee;
 
   --txt-size:           62.5%;
   --padding:            2vw;
-  --margin:             2vw;
+  --margin:             2.5vw;
 
   --padding-scale:      1;
 
@@ -44,7 +44,6 @@
 *{
   margin: 0px;
   max-width: 100%;
-  font-weight: 300;
 }
 html{
   font-size: var(--txt-size);
@@ -53,7 +52,7 @@ html{
   background:  var(--background-default);
   width: auto ;
   max-width: 100vw;
-  font-family:  "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:  var(--font);
 }
 body{
   font-size: 1.5rem;
@@ -66,7 +65,7 @@ $breakpoints: (
   lg:   (0992px 2.5),
   xl:   (1200px 3.0),
   xxl:  (1400px 5.0),
- xxxl: (2200px 7.0)
+ xxxl: (2200px 8.0)
 ) !default;
 
 @each $bp in map-keys($breakpoints) {

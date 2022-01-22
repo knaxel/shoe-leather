@@ -13,7 +13,9 @@ figure , caption, figcaption{
   padding: var(--rel-padding);
 }
 hr{
-  margin-top: var(--rel-margin)
+  margin-top: var(--rel-margin);
+  border:none;
+  border-bottom:1px solid var(--color-default);
 }
 span, var, sub, sup, meter{
   padding: 0px;
@@ -37,17 +39,16 @@ section{
   padding:0px;
 }
 
-@media only screen and (min-width: 1400px ) {
+@media only screen and (min-width: 960px ) {
   body > section{
-    max-width: 60%;
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-@media only screen and (min-width: 2200px ) {
+@media only screen and (min-width: 1400px ) {
   body > section{
-    max-width: 40%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -87,7 +88,6 @@ nav ul, nav ol, nav dl {
 }
 nav li{
   width: auto;
-  min-width: fit-content;
   display: block;
   padding:0;
 }
@@ -116,9 +116,9 @@ nav > a:last-child {
   padding: calc(var(--rel-padding));
 }
 nav > ul{
-  min-width: fit-content;
+  overflow: hidden;
 }
-@media only screen and (min-width: 768px ) {
+@media only screen and (min-width: 0576px ) {
 
   nav{
     flex-flow: row ;
@@ -160,14 +160,14 @@ input:not([type="submit"]){
   padding-right: var(--rel-padding);
   padding-left: var(--rel-padding);
 
-  margin-top: calc(var(--rel-padding) / 2);
-  margin-bottom: calc(var(--rel-padding) / 2);
+  margin-top: calc(var(--rel-margin) / 2);
+  margin-bottom: calc(var(--rel-margin) / 2);
   margin-right: 0;
   margin-left: 0;
 }
 input[type="submit"],button{
-  margin-top: calc(var(--rel-padding) / 2);
-  margin-bottom: calc(var(--rel-padding) / 2);
+  margin-top: calc(var(--rel-margin) / 2);
+  margin-bottom: calc(var(--rel-margin) / 2);
   width: fit-content;
   margin-left:  auto;
   margin-right:  auto;
