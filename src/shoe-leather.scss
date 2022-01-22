@@ -6,7 +6,6 @@
 @use 'parts/elements';
 @use 'parts/classes';
 
-@use 'parts/Benny';
 
 
 //User Variables
@@ -18,16 +17,25 @@
   --background-nav:       #101010;
 
   --color-default:        #ddd;
-  --color-navigation:     #ff8642;
+  --color-other:        #834d49;
   --color-link:           #a4ade9;
   --color-disabled:       #363636;
+  --color-active:         #eee;
 
   --txt-size:           62.5%;
   --padding:            2vw;
+  --margin:             2vw;
+
   --padding-scale:      1;
-  --margin:             2vw; 
 
-
+  --color-black:        #000000;
+  --color-white:        #FFFFFF;
+  --color-red:          #FF0000;
+  --color-yellow:       #FFFF00;
+  --color-green:        #00FF00;
+  --color-aqua:         #00FFFF;
+  --color-blue:         #0000FF;
+  --color-purple:       #FF00FF;
 
 
 }

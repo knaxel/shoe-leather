@@ -149,7 +149,7 @@ li{
 }
 /************************************************************************/
 input,button, textarea,option,select{
-  border-radius: 0.25rem;
+  border-radius: 0.3rem;
   border: none;
   color: var(--background-default);
   background-color: var(--background-input);
@@ -176,7 +176,7 @@ input[type="submit"],button{
 
 }
 select{
-  font-size: .8rem;
+  font-size: 1.5rem;
 }
 
 form{

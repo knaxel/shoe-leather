@@ -160,7 +160,7 @@ li {
 
 /************************************************************************/
 input, button, textarea, option, select {
-  border-radius: 0.1rem;
+  border-radius: 0.3rem;
   border: none;
   color: var(--background-default);
   background-color: var(--background-input);
@@ -178,7 +178,6 @@ input:not([type=submit]) {
 }
 
 input[type=submit], button {
-  border-radius: 0.1rem;
   margin-top: calc(var(--rel-padding) / 2);
   margin-bottom: calc(var(--rel-padding) / 2);
   width: fit-content;
@@ -189,7 +188,7 @@ input[type=submit], button {
 }
 
 select {
-  font-size: 0.8rem;
+  font-size: 1.5rem;
 }
 
 form fieldset > div {
@@ -212,6 +211,9 @@ form fieldset div input, form fieldset div textarea {
 /************************************************************************/
 a[href]:hover, button:hover, input[type=submit]:hover {
   cursor: pointer;
+}
+
+input[type=submit]:hover {
   background-color: #d2d2d2;
 }
 
@@ -440,6 +442,91 @@ img.rel {
   min-width: 10rem;
 }
 
+/*colors ***********************/
+.c-none {
+  color: rgba(0, 0, 0, 0);
+}
+
+.c-default {
+  color: var(--color-default);
+}
+
+.c-other {
+  color: var(--color-other);
+}
+
+.c-black {
+  color: var(--color-black);
+}
+
+.c-white {
+  color: var(--color-white);
+}
+
+.c-red {
+  color: var(--color-red);
+}
+
+.c-yellow {
+  color: var(--color-yellow);
+}
+
+.c-green {
+  color: var(--color-green);
+}
+
+.c-aqua {
+  color: var(--color-aqua);
+}
+
+.c-blue {
+  color: var(--color-blue);
+}
+
+.c-purple {
+  color: var(--color-purple);
+}
+
+.bg-none, .bg-alpha {
+  background: rgba(0, 0, 0, 0);
+}
+
+.bg-default {
+  background: var(--background-default);
+}
+
+.bg-black {
+  background: var(--color-black);
+}
+
+.bg-white {
+  background: var(--color-white);
+}
+
+.bg-red {
+  background: var(--color-red);
+}
+
+.bg-yellow {
+  background: var(--color-yellow);
+}
+
+.bg-green {
+  background: var(--color-green);
+}
+
+.bg-aqua {
+  background: var(--color-aqua);
+}
+
+.bg-blue {
+  background: var(--color-blue);
+}
+
+.bg-purple {
+  background: var(--color-purple);
+}
+
 /************************************************************************/
 /**| Shoe Leather - main.css                                           **/
 /**| by Snow + Knaxel                                                  **/
@@ -450,13 +537,22 @@ img.rel {
   --background-input: rgb(239, 239, 239);
   --background-nav: #101010;
   --color-default: #ddd;
-  --color-navigation: #ff8642;
+  --color-other: #834d49;
   --color-link: #a4ade9;
   --color-disabled: #363636;
+  --color-active: #eee;
   --txt-size: 62.5%;
   --padding: 2vw;
-  --padding-scale: 1;
   --margin: 2vw;
+  --padding-scale: 1;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-red: #FF0000;
+  --color-yellow: #FFFF00;
+  --color-green: #00FF00;
+  --color-aqua: #00FFFF;
+  --color-blue: #0000FF;
+  --color-purple: #FF00FF;
 }
 
 * {

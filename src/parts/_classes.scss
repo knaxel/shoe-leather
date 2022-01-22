@@ -71,3 +71,70 @@ img.rel {
 	width:10rem;
 	min-width:10rem;
 }
+
+
+/*colors ***********************/
+.c-none{
+	color:rgba(0,0,0,0);
+}
+.c-default{
+	color:var(--color-default);
+}
+.c-other{
+	color:var(--color-other);
+}
+.c-black{
+	color:var(--color-black);
+}
+.c-white{
+	color:var(--color-white);
+}
+.c-red{
+	color:var(--color-red);
+}
+.c-yellow{
+	color:var(--color-yellow);
+}
+.c-green{
+	color:var(--color-green);
+}
+.c-aqua{
+	color:var(--color-aqua);
+}
+.c-blue{
+	color:var(--color-blue);
+}
+.c-purple{
+	color:var(--color-purple);
+}
+
+.bg-none,.bg-alpha{
+	background:rgba(0, 0, 0,0);
+}
+.bg-default{
+	background:var(--background-default);
+}
+.bg-black{
+	background:var(--color-black);
+}
+.bg-white{
+	background:var(--color-white);
+}
+.bg-red{
+	background:var(--color-red);
+}
+.bg-yellow{
+	background:var(--color-yellow);
+}
+.bg-green{
+	background:var(--color-green);
+}
+.bg-aqua{
+	background:var(--color-aqua);
+}
+.bg-blue{
+	background:var(--color-blue);
+}
+.bg-purple{
+	background:var(--color-purple);
+}
