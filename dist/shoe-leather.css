@@ -273,21 +273,78 @@ h1 > a {
 .row {
   display: flex;
   flex-wrap: wrap;
+  flex-flow: row wrap;
   max-width: 100%;
+  width: 100%;
 }
 
 .col {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  box-sizing: border-box;
+  margin-left: calc(var(--rel-margin) / 2);
+  margin-right: calc(var(--rel-margin) / 2);
+  max-width: 100%;
 }
 
-.cell {
-  display: flex;
-  box-sizing: border-box;
-  padding: var(--rel-padding);
-  max-width: 100%;
-  width: 100%;
+.one.col {
+  flex-basis: 4.6666666667%;
+  flex-grow: 0;
+}
+
+.two.col {
+  flex-basis: 13.3333333333%;
+  flex-grow: 0;
+}
+
+.three.col {
+  flex-basis: 22%;
+  flex-grow: 0;
+}
+
+.four.col {
+  flex-basis: 30.6666666667%;
+  flex-grow: 0;
+}
+
+.five.col {
+  flex-basis: 39.3333333333%;
+  flex-grow: 0;
+}
+
+.six.col {
+  flex-basis: 48%;
+  flex-grow: 0;
+}
+
+.seven.col {
+  flex-basis: 56.6666666667%;
+  flex-grow: 0;
+}
+
+.eight.col {
+  flex-basis: 65.3333333333%;
+  flex-grow: 0;
+}
+
+.nine.col {
+  flex-basis: 74%;
+  flex-grow: 0;
+}
+
+.ten.col {
+  flex-basis: 82.6666666667%;
+  flex-grow: 0;
+}
+
+.eleven.col {
+  flex-basis: 91.3333333333%;
+  flex-grow: 0;
+}
+
+.twelve.col {
+  flex-basis: 100%;
+  flex-grow: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -297,12 +354,13 @@ h1 > a {
     max-width: 100%;
   }
 }
-img.resp {
-  width: 1rem;
+.center {
+  justify-content: center;
 }
 
-.right {
-  justify-content: right;
+.middle {
+  flex-direction: row;
+  align-items: center;
 }
 
 .m-0, *[m-0] {
@@ -310,7 +368,7 @@ img.resp {
 }
 
 .p-0, *[p-0] {
-  padding: 0rem;
+  padding: calc(0rem * var(--padding-scale));
 }
 
 .s-0, *[s-0] {
@@ -322,7 +380,7 @@ img.resp {
 }
 
 .p-1, *[p-1] {
-  padding: 1rem;
+  padding: calc(1rem * var(--padding-scale));
 }
 
 .s-1, *[s-1] {
@@ -334,7 +392,7 @@ img.resp {
 }
 
 .p-2, *[p-2] {
-  padding: 2rem;
+  padding: calc(2rem * var(--padding-scale));
 }
 
 .s-2, *[s-2] {
@@ -346,7 +404,7 @@ img.resp {
 }
 
 .p-3, *[p-3] {
-  padding: 3rem;
+  padding: calc(3rem * var(--padding-scale));
 }
 
 .s-3, *[s-3] {
@@ -358,7 +416,7 @@ img.resp {
 }
 
 .p-4, *[p-4] {
-  padding: 4rem;
+  padding: calc(4rem * var(--padding-scale));
 }
 
 .s-4, *[s-4] {
@@ -370,11 +428,16 @@ img.resp {
 }
 
 .p-5, *[p-5] {
-  padding: 5rem;
+  padding: calc(5rem * var(--padding-scale));
 }
 
 .s-5, *[s-5] {
   font-size: 5rem;
+}
+
+img.rel {
+  width: 10rem;
+  min-width: 10rem;
 }
 
 /************************************************************************/
