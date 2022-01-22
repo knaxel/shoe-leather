@@ -149,7 +149,7 @@ li{
 }
 /************************************************************************/
 input,button, textarea,option,select{
-  border-radius: .1rem;
+  border-radius: 0.25rem;
   border: none;
   color: var(--background-default);
   background-color: var(--background-input);
@@ -166,7 +166,6 @@ input:not([type="submit"]){
   margin-left: 0;
 }
 input[type="submit"],button{
-  border-radius: .1rem;
   margin-top: calc(var(--rel-padding) / 2);
   margin-bottom: calc(var(--rel-padding) / 2);
   width: fit-content;
@@ -201,8 +200,11 @@ form{
   }
 }
 /************************************************************************/
-a[href]:hover, button:hover, input[type="submit"]:hover {
-  cursor: pointer;
+a[href]:hover, button:hover, input[type="submit"]:hover{
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
   background-color: rgb(210, 210, 210);
 }
 a[href]:hover{
