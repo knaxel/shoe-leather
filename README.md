@@ -2,19 +2,26 @@
   A Lightweight CSS Framework - @various-office-supplies @knaxel
 
 ## Specifics :
-- [core/layout](#core-layout)
-- [text](#text)
-- [forms](#forms)
-- [tables/lists](#tables-lists)
-- [effects](#effects)
-- [tweaks](#tweaks)
+| [core/layout](#core-layout)   |  [text](#text) | [forms](#forms) | [tables/lists](#tables-lists) | [effects](#effects) | [tweaks](#tweaks) |
+| ----------------------------- | -------------- | --------------- | ----------------------------- |--------------------- |------------- |
 
 # Core-Layout
+sum ez stuff here
+
 # Text
+sum nice stuff here
+
 # Forms
+more useful stuff
+
 # Tables-Lists
+lists and tables of stufff
+
 # Effects
+hopefully lots of stufff
+
 # Tweaks
+hopefully smaller stuff
 
 
 | To Do List    | Knaxel        | Supplies      | File(s)       |
