@@ -3,7 +3,13 @@
 <h1> Shoe - Leather   <sub><sup> A Lightweight CSS Framework </sup></sub></h1>
 Contributors : <a  align="right" href="https://github.com/various-office-supplies">@various-office-supplies</a> <a align="right"  href="https://github.com/knaxel">@knaxel</a>
 
-# Specifics :
+# Examples 
+<a href="www.github.com"> shoeleather.com </a> |
+<a href="www.github.com"> otherexample.net </a> |
+<a href="www.github.com"> third.example.net </a> |
+<a href="www.github.com"> third.example.net </a> 
+
+# Specifics 
 
 <details><summary>Core-Layout</summary>
 <p>
