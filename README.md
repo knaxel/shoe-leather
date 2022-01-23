@@ -1,5 +1,22 @@
-# shoe-leather
-bootstrap but not bad
+# Shoe - Leather 
+  A Lightweight CSS Framework - @various-office-supplies @knaxel
+
+## Specifics :
+- [core/layout](#core-layout)
+- [text](#text)
+- [forms](#forms)
+- [tables/lists](#tables-lists)
+- [effects](#effects)
+- [tweaks](#tweaks)
+
+# Core-Layout
+# Text
+# Forms
+# Tables-Lists
+# Effects
+# Tweaks
+
+
 | To Do List    | Knaxel        | Supplies      | File(s)       |
 | ------------- | ------------- | ------------- | ------------- |
 | Form Inputs           |   | x | \_forms.scss |
