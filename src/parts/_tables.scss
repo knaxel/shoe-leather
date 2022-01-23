@@ -1,0 +1,11 @@
+/************************************************************************/
+table{
+  margin: var(--rel-m);
+}
+ol *,ul > *,dl *{ 
+  margin-top: calc(var(--rel-m) );
+  margin-left: calc(var(--rel-m) * 2);
+  margin-right: 0;
+}
+dd{margin-left: calc(var(--rel-m) * 3);}
+li{list-style: none;}

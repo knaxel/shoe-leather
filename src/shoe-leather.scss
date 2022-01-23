@@ -3,9 +3,16 @@
 /**| by Snow + Knaxel                                                  **/
 /************************************************************************/
 
-@use 'parts/elements';
-@use 'parts/classes';
+@use "sass:string";
+@use 'parts/core';
+@use 'parts/tables';
+// @use 'parts/nav';
+@use 'parts/blocktext';
+@use 'parts/inline';
+@use 'parts/forms';
+ @use 'parts/classes';
 @use 'parts/knaxel';
+
 
 
 //User Variables
@@ -20,60 +27,24 @@
   --color-other:          #834d49;
   --color-link:           #a4ade9;
   --color-disabled:       #363636;
-  --color-active:         #eee;
+  --color-active:          #fff;
 
   --txt-size:           62.5%;
   --padding:            2vw;
-  --margin:             2.5vw;
+  --margin:             2vw;
 
   --padding-scale:      1;
 
   --color-black:        #000000;
   --color-white:        #FFFFFF;
-  --color-red:          #FF0000;
-  --color-yellow:       #FFFF00;
-  --color-green:        #00FF00;
-  --color-aqua:         #00FFFF;
-  --color-blue:         #0000FF;
-  --color-purple:       #FF00FF;
-
+  --color-blue: #5967E8;
+  --color-green: #81E45E;
+  --color-red: #E84A4A;
+  --color-yellow:#e1da66;
+  --color-aqua: #9DFBFB;
+  --color-purple:#BF60FB;
+  
+  --popup-blur-color: #03050e70;
+  --popup-blur:       9px;
 
 }
-
-// CORE CSS
-*{
-  margin: 0px;
-  max-width: 100%;
-}
-html{
-  font-size: var(--txt-size);
-  line-height: 1;
-  color: var(--color-default);
-  background:  var(--background-default);
-  width: auto ;
-  max-width: 100vw;
-  font-family:  var(--font);
-}
-body{
-  font-size: 1.5rem;
-}
-
-$breakpoints: (
-  xs:   (0000px 1.0),
-  sm:   (0576px 1.5),
-  md:   (0768px 2.0),
-  lg:   (0992px 2.5),
-  xl:   (1200px 3.0),
-  xxl:  (1400px 5.0),
- xxxl: (2200px 8.0)
-) !default;
-
-@each $bp in map-keys($breakpoints) {
-  @media screen and (min-width: #{nth(map-get($breakpoints,$bp),1)} ){
-    :root{
-      //--rel-scale:       calc(var(--txt-size) / #{nth(map-get($breakpoints,$bp),2)});
-      --rel-padding:     calc(var(--padding) / #{nth(map-get($breakpoints,$bp),2)});
-      --rel-margin:      calc(var(--margin) / #{nth(map-get($breakpoints,$bp),2)});
-    }
-  }
-} 
