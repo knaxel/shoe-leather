@@ -10,3 +10,4 @@ bootstrap but not bad
 | Form Layout Options   | x |   | \_forms.scss |
 | progress bar          | x |   | \_inline.scss |
 | .col.m-x   fix        | x |   | \_core.scss |
+| light theme :)        |   | x | \_core.scss |
