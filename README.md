@@ -1,6 +1,6 @@
 <img align="left" width="80" height="80" src="https://github.com/various-office-supplies/shoe-leather/blob/main/shoe-leather/shoe-leather-64.png?raw=true" alt="Resume application project app icon" />
 
-<h1> Shoe - Leather   <sub><sup><sub>  A Lightweight CSS Framework - <a href="https://github.com/various-office-supplies">@various-office-supplies</a> <a href="https://github.com/knaxel">knaxel</a></sub></sup></sub></h1>
+<h1> Shoe - Leather   <sub><sup><>  A Lightweight CSS Framework - <a href="https://github.com/various-office-supplies">@various-office-supplies</a> <a href="https://github.com/knaxel">@knaxel</a></></sup></sub></h1>
 
 ## Specifics :
 | [core/layout](#core-layout)   |  [text](#text) | [forms](#forms) | [tables/lists](#tables-lists) | [effects](#effects) | [tweaks](#tweaks) |
