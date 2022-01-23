@@ -3,27 +3,80 @@
 <h1> Shoe - Leather   <sub><sup> A Lightweight CSS Framework </sup></sub></h1>
 Contributors : <a  align="right" href="https://github.com/various-office-supplies">@various-office-supplies</a> <a align="right"  href="https://github.com/knaxel">@knaxel</a>
 
-## Specifics :
-| [core/layout](#core-layout)   |  [text](#text) | [forms](#forms) | [tables/lists](#tables-lists) | [effects](#effects) | [tweaks](#tweaks) |
-| ----------------------------- | -------------- | --------------- | ----------------------------- |--------------------- |------------- |
+# Specifics :
 
-# Core-Layout
-sum ez stuff here
+<details><summary>Core-Layout</summary>
+<p>
 
-# Text
-sum nice stuff here
+#### We can hide anything, even code!
 
-# Forms
-more useful stuff
+    ```ruby
+      puts "sum ez stuff here"
+    ```
 
-# Tables-Lists
-lists and tables of stufff
+</p>
+</details>
 
-# Effects
-hopefully lots of stufff
 
-# Tweaks
-hopefully smaller stuff
+<details><summary>Text</summary>
+<p>
+
+#### We can hide anything, even code!
+
+    ```ruby
+      puts "sum nice stuff here"
+    ```
+
+</p>
+</details>
+
+<details><summary>Forms</summary>
+<p>
+
+#### We can hide anything, even code!
+
+    ```ruby
+      puts "more useful stuff"
+    ```
+
+</p>
+</details>
+
+<details><summary>Tables-Lists</summary>
+<p>
+
+#### We can hide anything, even code!
+
+    ```ruby
+      puts "lists and tables of stufff"
+    ```
+
+</p>
+</details>
+
+<details><summary>Effects</summary>
+<p>
+
+#### We can hide anything, even code!
+
+    ```ruby
+      puts "hopefully lots of stufff"
+    ```
+
+</p>
+</details>
+
+<details><summary>Tweaks</summary>
+<p>
+
+#### We can hide anything, even code!
+
+    ```ruby
+      puts "hopefully smaller stuff"
+    ```
+
+</p>
+</details>
 
 
 | To Do List    | Knaxel        | Supplies      | File(s)       |
