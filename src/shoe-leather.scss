@@ -1,31 +1,34 @@
 /************************************************************************/
 /**| Shoe Leather - main.css                                           **/
-/**| by Snow + Knaxel                                                  **/
+/**| by Snow + Emerson                                                 **/
 /************************************************************************/
 
 @use "sass:string";
 @use 'parts/core';
-@use 'parts/tables';
-// @use 'parts/nav';
-@use 'parts/blocktext';
-@use 'parts/inline';
-@use 'parts/forms';
-@use 'parts/classes';
-@use 'parts/knaxel';
+@use 'parts/headertext';
+@use 'parts/transform';
+// @use 'parts/tables';
+// @use 'parts/inline';
+// @use 'parts/forms';
+// @use 'parts/classes';
+// @use 'parts/knaxel';
 
 
+// dev help tools
+*{
+  // outline:1px dashed  white ;
+}
 
 //User Variables
 :root{
-  --font:               "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-  --txt-size:           62.5%;
+  --font:                Monostrat , sans-serif;
+  --txt-size:           12pt;
   --padding:            2vw;
   --margin:             2vw;
 
   --padding-scale:      1;
 
-  --background-default: #101010;
+  --background-default: #151515;
   --background-other:   #222;
   --background-input:   rgb(239, 239, 239);
 
@@ -43,7 +46,6 @@
   --color-yellow:       #e1da66;
   --color-aqua:         #9DFBFB;
   --color-purple:       #BF60FB;
-
   
   --popup-blur-color:   #03050e70;
   --popup-blur:         9px;

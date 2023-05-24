@@ -60,11 +60,10 @@ hr{
 }
 
 /*Layout**************************************************************/
-.row, header, footer{
+.row, header, footer, section{
   display: flex;
   flex-flow: row wrap;
   max-width: 100%;
-  width: 100%;
 }
 .col{
   display: flex;
@@ -76,42 +75,50 @@ hr{
   max-width: 100%;
 }
 .col-m{
-  flex-basis:fit-content;
   flex-grow:0;
 }
-.one.col                    { flex-basis: 4.66666666667%; flex-grow:0;}
-.two.col                    { flex-basis: 13.3333333333%; flex-grow:0;}
-.three.col                  { flex-basis: 22%;            flex-grow:0;}
-.four.col                   { flex-basis: 30.6666666667%; flex-grow:0;}
-.five.col                   { flex-basis: 39.3333333333%; flex-grow:0;}
-.six.col                    { flex-basis: 48%;            flex-grow:0;}
-.seven.col                  { flex-basis: 56.6666666667%; flex-grow:0;}
-.eight.col                  { flex-basis: 65.3333333333%; flex-grow:0;}
-.nine.col                   { flex-basis: 74.0%;          flex-grow:0;}
-.ten.col                    { flex-basis: 82.6666666667%; flex-grow:0;}
-.eleven.col                 { flex-basis: 91.3333333333%; flex-grow:0;}
-.twelve.col                 { flex-basis: 100%; flex-grow:0;}
 
 
 @media (min-width: 768px ) {
   .cell,.col{
-    flex-basis: 0;
-    flex-grow: 1;
+    flex-grow:0;
     max-width: 100%;
   }
 }
-.grow > *{
+.grow-all{
+
+}
+.grow-all > *{
+  flex-grow:1;
+}
+.grow{
   flex-grow:1;
 }
 .center{
   justify-content:center;
-  text-align: center;
   margin-right: auto;
   margin-left: auto;
 }
-.middle{
-  flex-direction: row;
-  align-items:center;
+.center-all > *{
+  justify-content:center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.center-text{
+text-align: center;
+}
+.middle {
+    display:flex;
+    align-items: center;
+}
+.middle-all > * {
+    display:flex;
+    align-items: center;
+}
+.bottom > *{
+  display:flex;
+  align-items:flex-end;
+    justify-content: flex-end;
 }
 .right{
   justify-content: right;
