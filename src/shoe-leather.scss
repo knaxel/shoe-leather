@@ -25,8 +25,8 @@
   --font:              -apple-system,BlinkMacSystemFont,"Segoe UI Adjusted","Segoe UI","Liberation Sans",sans-serif;
 
   --txt-base:           16px;
-  --padding:            2vw;
-  --margin:             2vw;
+  --padding:            8px;
+  --margin:             8px;
 
   --padding-scale:      1;
 
@@ -96,7 +96,7 @@ $breakpoints: (
       --rel-p:     calc(var(--padding) / #{nth(map-get($breakpoints,$bp),2)});
       --rel-m:      calc(var(--margin) / #{nth(map-get($breakpoints,$bp),2)});
       --txt-size:    #{ nth(map-get($breakpoints,$bp),2)} ;
-      //font-size: calc( var(--txt-size)*var(--txt-base) );
+      font-size: calc(var(--txt-base) + 2) ;
     }
     html{
       
