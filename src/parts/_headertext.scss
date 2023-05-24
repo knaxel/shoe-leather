@@ -7,22 +7,29 @@ h1,h2,h3,h4,h5,h6,p,address, time{
 }
 h1.middle,h2.middle,h3.middle,h4.middle,h5.middle,h6.middle {
 }
+
+
+//mostly title headers
 h1 {
-  font-size: 4rem;
+/*  font-size: 4.1rem;*/
+font-size:calc( 3 * var(--txt-base) * var(--txt-size));
 }
 h2 {
-  font-size: 3.6rem;
+/*  font-size: 3.7rem;*/
+font-size:calc( 2.8 * var(--txt-base) * var(--txt-size));
 }
 h3 {
-  font-size: 3.0rem;
+/*  font-size: 3.3rem;*/
+font-size:calc( 2.5 * var(--txt-base) * var(--txt-size));
 }
+//mostly paragraphs
 h4 {
-  font-size: 2.4rem;
+font-size:calc( 2.0 * var(--txt-base) * var(--txt-size));
 }
 h5 {
-  font-size: 1.8rem;
+font-size:calc( 1.75 * var(--txt-base) * var(--txt-size));
 }
 h6 {
-  font-size: 1.5rem;
+font-size:calc( 1.5 * var(--txt-base) * var(--txt-size));
 }
 //h1 > a{display:block;}

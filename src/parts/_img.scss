@@ -1,0 +1,8 @@
+.stretch{
+  object-fit: fill;
+}
+img{
+	height: fit-content;
+	width: fit-content;
+	object-fit:contain;
+}

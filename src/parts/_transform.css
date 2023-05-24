@@ -3,13 +3,13 @@
 }
 
 .spin{
-	animation: test 1s linear infinite;
+	animation: test 5s linear infinite;
 }
 @keyframes test {
 	0% { 
-		transform: rotateZ(0deg);	
+		transform: rotateY(180deg) rotateZ(0deg);	
 	 }
 	100% { 
-		transform: rotateZ(360deg);	
+		transform: rotateY(180deg) rotateZ(360deg);	
 	 }
 }
