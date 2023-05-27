@@ -226,6 +226,107 @@ img {
   object-fit: contain;
 }
 
+@media screen and (min-width: 0px) {
+  :root {
+    --rel-p: calc(var(--padding) / 1);
+    --rel-m: calc(var(--margin) / 1);
+    --txt-size: 1 ;
+    font-size: calc(var(--txt-base) + 2);
+  }
+}
+@media screen and (min-width: 576px) {
+  :root {
+    --rel-p: calc(var(--padding) / 1);
+    --rel-m: calc(var(--margin) / 1);
+    --txt-size: 1 ;
+    font-size: calc(var(--txt-base) + 2);
+  }
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --rel-p: calc(var(--padding) / 1.1);
+    --rel-m: calc(var(--margin) / 1.1);
+    --txt-size: 1.1 ;
+    font-size: calc(var(--txt-base) + 2);
+  }
+}
+@media screen and (min-width: 992px) {
+  :root {
+    --rel-p: calc(var(--padding) / 1.15);
+    --rel-m: calc(var(--margin) / 1.15);
+    --txt-size: 1.15 ;
+    font-size: calc(var(--txt-base) + 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  :root {
+    --rel-p: calc(var(--padding) / 1.2);
+    --rel-m: calc(var(--margin) / 1.2);
+    --txt-size: 1.2 ;
+    font-size: calc(var(--txt-base) + 2);
+  }
+}
+@media screen and (min-width: 1400px) {
+  :root {
+    --rel-p: calc(var(--padding) / 1.3);
+    --rel-m: calc(var(--margin) / 1.3);
+    --txt-size: 1.3 ;
+    font-size: calc(var(--txt-base) + 2);
+  }
+}
+@media screen and (min-width: 2200px) {
+  :root {
+    --rel-p: calc(var(--padding) / 1.4);
+    --rel-m: calc(var(--margin) / 1.4);
+    --txt-size: 1.4 ;
+    font-size: calc(var(--txt-base) + 2);
+  }
+}
+/************************************************************************/
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  text-align: center;
+}
+table caption {
+  font-size: 1.3em;
+}
+
+ol *, ul > *, dl * {
+  margin-top: calc(var(--rel-m));
+  margin-left: calc(var(--rel-m) * 2);
+  margin-right: 0;
+}
+
+dd {
+  margin-left: calc(var(--rel-m) * 3);
+}
+
+@media screen and (max-width: 768px) {
+  table td, table tr {
+    display: block;
+    text-align: right;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
 /*   Tweaks  ***************************************************** */
 .p-0 {
   padding: calc(0* var(--rel-p) * var(--padding-scale));
@@ -702,62 +803,6 @@ s-5 {
     --color-purple: #BF60FB;
     --popup-blur-color: #03050e70;
     --popup-blur: 9px;
-  }
-}
-@media screen and (min-width: 0px) {
-  :root {
-    --rel-p: calc(var(--padding) / 1);
-    --rel-m: calc(var(--margin) / 1);
-    --txt-size: 1 ;
-    font-size: calc(var(--txt-base) + 2);
-  }
-}
-@media screen and (min-width: 576px) {
-  :root {
-    --rel-p: calc(var(--padding) / 1);
-    --rel-m: calc(var(--margin) / 1);
-    --txt-size: 1 ;
-    font-size: calc(var(--txt-base) + 2);
-  }
-}
-@media screen and (min-width: 768px) {
-  :root {
-    --rel-p: calc(var(--padding) / 1.1);
-    --rel-m: calc(var(--margin) / 1.1);
-    --txt-size: 1.1 ;
-    font-size: calc(var(--txt-base) + 2);
-  }
-}
-@media screen and (min-width: 992px) {
-  :root {
-    --rel-p: calc(var(--padding) / 1.15);
-    --rel-m: calc(var(--margin) / 1.15);
-    --txt-size: 1.15 ;
-    font-size: calc(var(--txt-base) + 2);
-  }
-}
-@media screen and (min-width: 1200px) {
-  :root {
-    --rel-p: calc(var(--padding) / 1.2);
-    --rel-m: calc(var(--margin) / 1.2);
-    --txt-size: 1.2 ;
-    font-size: calc(var(--txt-base) + 2);
-  }
-}
-@media screen and (min-width: 1400px) {
-  :root {
-    --rel-p: calc(var(--padding) / 1.3);
-    --rel-m: calc(var(--margin) / 1.3);
-    --txt-size: 1.3 ;
-    font-size: calc(var(--txt-base) + 2);
-  }
-}
-@media screen and (min-width: 2200px) {
-  :root {
-    --rel-p: calc(var(--padding) / 1.4);
-    --rel-m: calc(var(--margin) / 1.4);
-    --txt-size: 1.4 ;
-    font-size: calc(var(--txt-base) + 2);
   }
 }
 

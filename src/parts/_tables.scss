@@ -1,6 +1,18 @@
+
+
+@use '../globals' as *;
+
 /************************************************************************/
 table{
-  margin: var(--rel-m);
+  border-collapse: collapse;
+  
+  th,td {
+    text-align: center
+  }
+  caption {
+    font-size: 1.3em;
+  }
+
 }
 ol *,ul > *,dl *{ 
   margin-top: calc(var(--rel-m) );
@@ -8,4 +20,36 @@ ol *,ul > *,dl *{
   margin-right: 0;
 }
 dd{margin-left: calc(var(--rel-m) * 3);}
-li{list-style: none;}
+li{}
+
+
+@media screen and (max-width:  #{nth(map-get($breakpoints,'md'),1)} ) {
+    table {
+            
+        td, tr {
+          display: block;
+          text-align: right;
+        }
+
+        thead {
+          border: none;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+        td::before {
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+        }
+        
+        td:last-child {
+          border-bottom: 0;
+        }
+    }
+
+}

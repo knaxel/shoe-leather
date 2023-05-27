@@ -3,22 +3,25 @@
 /**| by Snow + Emerson                                                 **/
 /************************************************************************/
 
+
 @use "sass:string";
 @use 'parts/core';
+
 @use 'parts/headertext';
 @use 'parts/transform';
 @use 'parts/img';
+@use 'parts/tables';
 
-// @use 'parts/tables';
 // @use 'parts/inline';
 // @use 'parts/forms';
- @use 'parts/classes';
-
+@use 'parts/classes';
+@use 'globals' as *;
 
 // dev help tools
 *{
   // outline:1px dashed  white ;
 }
+
 
 //User Variables
 :root{
@@ -79,27 +82,3 @@
   --popup-blur:         9px;
   }
 }
-$breakpoints: (
-  xs:   (0000px 1.0),
-  sm:   (0576px 1.0),
-  md:   (0768px 1.1),
-  lg:   (0992px 1.15),
-  xl:   (1200px 1.2),
-  xxl:  (1400px 1.3),
- xxxl: (2200px 1.4)
-) !default;
-
-@each $bp in map-keys($breakpoints) {
-  @media screen and (min-width: #{nth(map-get($breakpoints,$bp),1)} ){
-    :root{
-      //--rel-scale:       calc(var(--txt-size) / #{nth(map-get($breakpoints,$bp),2)});
-      --rel-p:     calc(var(--padding) / #{nth(map-get($breakpoints,$bp),2)});
-      --rel-m:      calc(var(--margin) / #{nth(map-get($breakpoints,$bp),2)});
-      --txt-size:    #{ nth(map-get($breakpoints,$bp),2)} ;
-      font-size: calc(var(--txt-base) + 2) ;
-    }
-    html{
-      
-    }
-  }
-} 
