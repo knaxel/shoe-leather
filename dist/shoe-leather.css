@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0px;
   margin: 0px;
@@ -12,18 +13,12 @@ html {
   background: var(--background-default);
 }
 
-/*html Core****************************************************************/
-img {
-  display: block;
+body {
+  display: flex;
+  flex-direction: column;
 }
 
-@media (min-width: 960px) {
-  body > section {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+/*html Core****************************************************************/
 figure, caption, figcaption {
   padding: var(--rel-p);
 }
@@ -37,32 +32,19 @@ hr {
 }
 
 /*Layout**************************************************************/
-.row, header, footer {
+.row, header, footer, main {
   display: flex;
   flex-flow: row wrap;
   max-width: 100%;
 }
 
-.col, section {
+.col, section, aside, article {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  margin-left: 1%;
-  margin-right: 1%;
-  flex-grow: 1;
   max-width: 100%;
 }
 
-.col-m {
-  flex-grow: 0;
-}
-
-@media (min-width: 768px) {
-  .cell, .col {
-    flex-grow: 0;
-    max-width: 100%;
-  }
-}
 .grow-all > * {
   flex-grow: 1;
 }
@@ -72,41 +54,44 @@ hr {
 }
 
 /*horizontal centering : center */
-.row.center, .center:not(.col) {
-  justify-content: center;
-  margin-right: auto;
-  margin-left: auto;
+.row.center, .center:not(.col, section, aside, article, h1, button) {
+  align-self: center;
 }
 
-.col.center {
+.col.center, section.center, aside.center, article.center, h1.center, button.center {
   align-items: center;
-  margin-right: auto;
-  margin-left: auto;
 }
 
-.center-all > * {
-  justify-content: center;
-  margin-right: auto;
-  margin-left: auto;
+.row.center-all > *, .center-all:not(.col, section, aside, article) > * {
+  align-items: center;
+}
+
+.col.center-all > *,
+section.center-all > *,
+aside.center-all > *,
+article.center-all > * {
+  align-self: center;
+  flex-grow: 1;
 }
 
 /*vertical centering : middle */
-.row.middle {
-  align-items: center;
+.row.middle, .middle:not(.col, section, aside, article) {
+  align-self: center;
 }
 
-.col.middle {
+.col.middle, section.middle, aside.middle, article.middle {
   justify-content: center;
 }
 
-.col.middle-all > * {
-  align-items: center;
+.middle-all:not(.col, section, aside, article) > * {
+  align-self: center;
 }
 
-.center-text {
-  text-align: center;
+.col.middle-all > *, section.middle-all > *, aside.middle-all > *, article.middle-all > * {
+  justify-self: center;
 }
 
+/*positioning */
 .col > .right {
   display: flex;
   justify-content: flex-end;
@@ -121,7 +106,7 @@ hr {
   align-items: flex-end;
 }
 
-/*   POPUPS  ***************************************************** */
+/*   OFFGRID  ***************************************************** */
 .popup, .popup-full, .popup-corner {
   display: none;
   z-index: 2;
@@ -156,74 +141,6 @@ hr {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-}
-
-/*Block Text**************************************************************/
-h1, h2, h3, h4, h5, h6, p, address, time {
-  font-weight: 100;
-  margin-left: var(--rel-m);
-}
-
-li > h1, li > h2, li > h3, li > h4, li > h5,
-li > h6 {
-  margin: 0;
-}
-
-h1 {
-  /*  font-size: 4.1rem;*/
-  font-size: calc(3 * var(--txt-base) * var(--txt-size));
-}
-
-h2 {
-  /*  font-size: 3.7rem;*/
-  font-size: calc(2.8 * var(--txt-base) * var(--txt-size));
-}
-
-h3 {
-  /*  font-size: 3.3rem;*/
-  font-size: calc(2.5 * var(--txt-base) * var(--txt-size));
-}
-
-h4 {
-  font-size: calc(2 * var(--txt-base) * var(--txt-size));
-}
-
-h5 {
-  font-size: calc(1.75 * var(--txt-base) * var(--txt-size));
-}
-
-h6 {
-  font-size: calc(1.5 * var(--txt-base) * var(--txt-size));
-}
-
-ul, ol {
-  padding-left: 1.5rem;
-}
-
-.flip {
-  transform: rotateY(180deg);
-}
-
-.spin {
-  animation: test 5s linear infinite;
-}
-
-@keyframes test {
-  0% {
-    transform: rotateY(180deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateY(180deg) rotateZ(360deg);
-  }
-}
-.stretch {
-  object-fit: fill;
-}
-
-img {
-  height: fit-content;
-  width: fit-content;
-  object-fit: contain;
 }
 
 @media screen and (min-width: 0px) {
@@ -293,14 +210,45 @@ table caption {
   font-size: 1.3em;
 }
 
-ol *, ul > *, dl * {
-  margin-top: calc(var(--rel-m));
-  margin-left: calc(var(--rel-m) * 2);
-  margin-right: 0;
+li > h1, li > h2, li > h3, li > h4, li > h5,
+li > h6 {
+  margin: 0;
 }
 
-dd {
-  margin-left: calc(var(--rel-m) * 3);
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+ul, ol {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+ul.row > li {
+  flex-direction: column;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+}
+
+ul > li::before {
+  content: "●";
+  padding-right: 0.8em;
+}
+
+ol > li::before {
+  counter-increment: numbers;
+  content: "" counter(numbers) ".";
+  padding-right: 0.8em;
+}
+
+li > a {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 @media screen and (max-width: 768px) {
@@ -327,6 +275,128 @@ dd {
     border-bottom: 0;
   }
 }
+/*Block Text**************************************************************/
+h1, h2, h3, h4, h5, h6, p, address, time {
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
+  margin-left: var(--rel-m);
+}
+
+h1 {
+  /*  font-size: 4.1rem;*/
+  font-size: calc(3 * var(--txt-base) * var(--txt-size));
+}
+
+h2 {
+  /*  font-size: 3.7rem;*/
+  font-size: calc(2.8 * var(--txt-base) * var(--txt-size));
+}
+
+h3 {
+  /*  font-size: 3.3rem;*/
+  font-size: calc(2.5 * var(--txt-base) * var(--txt-size));
+}
+
+h4 {
+  font-size: calc(2 * var(--txt-base) * var(--txt-size));
+}
+
+h5 {
+  font-size: calc(1.75 * var(--txt-base) * var(--txt-size));
+}
+
+h6 {
+  font-size: calc(1.5 * var(--txt-base) * var(--txt-size));
+}
+
+.text-center, ul.text-center > * {
+  text-align: center;
+}
+
+.stretch {
+  object-fit: fill;
+}
+
+img {
+  height: fit-content;
+  width: fit-content;
+  object-fit: contain;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.spin {
+  animation: test 5s linear infinite;
+}
+
+@keyframes test {
+  0% {
+    transform: rotateY(180deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateY(180deg) rotateZ(360deg);
+  }
+}
+.bg-sky {
+  background: linear-gradient(322deg, #4b86fe, rgba(186, 74, 255, 0) 90%), linear-gradient(178deg, #008aff, rgba(0, 138, 255, 0) 70%), linear-gradient(24deg, #1b96fe, rgba(0, 255, 198, 0) 65%);
+}
+
+.bg-blur {
+  backdrop-filter: blur(calc(var(--rel-padding)));
+}
+
+.bg-glass {
+  backdrop-filter: blur(9px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0px 0px 15px rgba(235, 235, 255, 0.1), 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-default);
+  border-radius: 0.8rem;
+  color: var(--color-default);
+  font-size: 2rem;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+button.bg-glass {
+  padding: calc(var(--rel-padding) * 3);
+}
+
+.bg-hue > *:nth-child(6n-1) {
+  background: var(--color-red);
+}
+
+.bg-hue > *:nth-child(6n-2) {
+  background: var(--color-yellow);
+}
+
+.bg-hue > *:nth-child(6n-3) {
+  background: var(--color-green);
+}
+
+.bg-hue > *:nth-child(6n-4) {
+  background: var(--color-aqua);
+}
+
+.bg-hue > *:nth-child(6n-5) {
+  background: var(--color-blue);
+}
+
+.bg-hue > *:nth-child(6n-6) {
+  background: var(--color-purple);
+}
+
+.bg-hue > * > a:hover {
+  text-shadow: 0px 0px 4px var(--color-white), 0px 0px 4px var(--color-white), 0px 0px 8px var(--color-white), 0px 0px 8px var(--color-white);
+}
+
+.size-one {
+  min-width: fit-content;
+  width: 10%;
+}
+
 /*   Tweaks  ***************************************************** */
 .p-0 {
   padding: calc(0* var(--rel-p) * var(--padding-scale));
@@ -753,6 +823,17 @@ s-5 {
   background: var(--color-purple);
 }
 
+.no-style {
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.no-style ::before {
+  all: unset;
+}
+
 /************************************************************************/
 /**| Shoe Leather - main.css                                           **/
 /**| by Snow + Emerson                                                 **/
@@ -762,7 +843,7 @@ s-5 {
   --txt-base: 16px;
   --padding: 8px;
   --margin: 8px;
-  --padding-scale: 1;
+  --padding-scale: 5;
   --background-default: #151515;
   --background-other: #222;
   --background-input: rgb(239, 239, 239);

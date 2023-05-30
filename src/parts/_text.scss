@@ -2,13 +2,11 @@
 /*Block Text**************************************************************/
 
 h1,h2,h3,h4,h5,h6,p,address, time{
+  display:flex;
+  flex-direction: column;
   font-weight: 100;
   margin-left: var(--rel-m);
 }
-li > h1,li > h2,li > h3,li > h4,li > h5,
-li > h6 { 
-  margin: 0;
- }
 
 //mostly title headers
 h1 {
@@ -34,7 +32,6 @@ h6 {
 font-size:calc( 1.5 * var(--txt-base) * var(--txt-size));
 }
 //h1 > a{display:block;}
-
-ul,ol{
-  padding-left:1.5rem;
+.text-center, ul.text-center > * {
+text-align: center;
 }

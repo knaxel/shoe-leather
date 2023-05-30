@@ -14,22 +14,11 @@ html{
   background:  var(--background-default);
 }
 body{
+  display: flex;
+  flex-direction: column;
 }
-
-
 
 /*html Core****************************************************************/
-img{
-  display: block;
-}
-
-@media (min-width: 960px ) {
-  body > section{
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-} 
 figure , caption, figcaption{
   padding: var(--rel-p);
 }
@@ -42,69 +31,74 @@ hr{
 }
 
 /*Layout**************************************************************/
-.row, header, footer{
+
+.row, header, footer, main {
   display: flex;
   flex-flow: row wrap;
   max-width: 100%;
 }
-.col, section{
+.col, section, aside, article{
   display: flex;
   flex-direction:column;
   box-sizing: border-box;
-  margin-left: 1%;//;calc(var(--rel-margin)/2);
-  margin-right: 1%;//;calc(var(--rel-margin)/2);
-  flex-grow:1;
   max-width: 100%;
 }
-.col-m{
-  flex-grow:0;
-}
 
-@media (min-width: 768px ) {
-  .cell,.col{
-    flex-grow:0;
-    max-width: 100%;
-  }
-}
-.grow-all{
-
-}
 .grow-all > *{
   flex-grow:1;
 }
 .grow{
   flex-grow:1;
 }
+
+
+// .center > .col{
+//   flex-grow:0;
+//   max-width: 100%; 
+// }
 /*horizontal centering : center */
-.row.center, .center:not(.col) {
-  justify-content:center;
-  margin-right: auto;
-  margin-left: auto;
+
+//MAKE A LIST OF ALL COLUMNS AND ROWS TO ANTYNOM THE CENTER
+//ADD CLARIFY IF PARENT IS ROW OR COLLUMN
+.row.center, .center:not(.col, section, aside, article, h1, button) {
+  align-self: center;
 }
-.col.center{
+.col, section, aside, article, h1, button {
+  &.center{
     align-items: center;
-  margin-right: auto;
-  margin-left: auto;
+  }
 }
-.center-all > *{
-  justify-content:center;
-  margin-right: auto;
-  margin-left: auto;
+// .col.center, section.center, aside.center, article.center, h1.center{
+//   align-items: center;
+// }
+
+.row.center-all > *, .center-all:not(.col, section, aside, article) > * {
+  align-items: center;
+}
+.col.center-all > * ,
+ section.center-all > * ,
+  aside.center-all > * ,
+   article.center-all > * {
+    align-self: center;
+    flex-grow:1;
 }
 
 /*vertical centering : middle */
-.row.middle {
-    align-items: center;
+.row.middle, .middle:not(.col, section, aside, article) {
+    align-self: center;
 }
-.col.middle {
+.col.middle, section.middle, aside.middle, article.middle{
   justify-content:center;
 }
-.col.middle-all > * {
-    align-items: center;
+.middle-all:not(.col, section, aside, article) > *  {
+  align-self: center;
 }
-.center-text{
-  text-align: center;
+.col.middle-all > * , section.middle-all > * , aside.middle-all > * , article.middle-all > * {
+  justify-self: center;
 }
+
+
+/*positioning */
 .col > .right {
   display:flex;
     justify-content: flex-end;
@@ -117,7 +111,7 @@ hr{
     align-items: flex-end;
 }
 
-/*   POPUPS  ***************************************************** */
+/*   OFFGRID  ***************************************************** */
 .popup,.popup-full,.popup-corner{
   display:none;
   z-index: 2;

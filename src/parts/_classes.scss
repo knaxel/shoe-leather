@@ -1,4 +1,7 @@
-
+.size-one {
+	min-width:fit-content;
+	width:10%;
+}
 /*   Tweaks  ***************************************************** */
 @for $i from 0 through 5 {
 
@@ -133,4 +136,15 @@
 }
 .bg-purple{
 	background:var(--color-purple);
+}
+
+.no-style {
+	text-decoration:none;
+	list-style: none;
+	padding:0;
+	margin:0;
+}
+
+.no-style ::before {
+	all:unset;
 }

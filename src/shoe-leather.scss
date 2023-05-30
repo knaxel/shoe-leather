@@ -6,21 +6,16 @@
 
 @use "sass:string";
 @use 'parts/core';
-
-@use 'parts/headertext';
-@use 'parts/transform';
-@use 'parts/img';
 @use 'parts/tables';
+@use 'parts/text';
+@use 'parts/img';
 
-// @use 'parts/inline';
-// @use 'parts/forms';
-@use 'parts/classes';
 @use 'globals' as *;
 
-// dev help tools
-*{
-  // outline:1px dashed  white ;
-}
+
+@use 'parts/transform';
+@use 'parts/effects';
+@use 'parts/classes';
 
 
 //User Variables
@@ -31,7 +26,7 @@
   --padding:            8px;
   --margin:             8px;
 
-  --padding-scale:      1;
+  --padding-scale:      5;
 
   --background-default: #151515;
   --background-other:   #222;

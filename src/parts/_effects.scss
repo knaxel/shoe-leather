@@ -5,7 +5,7 @@
 .bg-blur{
     backdrop-filter: blur(calc(var(--rel-padding)));
 }
-ul.bg-glass > li,dl.bg-glass > dl,dl.bg-glass > dd,ol.bg-glass > li,button.bg-glass, a.bg-glass {
+.bg-glass  {
     backdrop-filter: blur(9px);
     background:rgba(255,255,255,.1);
     box-shadow:inset 0px 0px 15px rgba(235,235,255,.1), 0px 1px 6px rgba(0,0,0,.1);
